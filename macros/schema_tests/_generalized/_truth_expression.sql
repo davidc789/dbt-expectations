@@ -8,5 +8,5 @@
 {% endmacro %}
 
 {% macro sqlserver__truth_expression(expression) %}
-  iif({{ expression }}, 1, 0) as expression
+  case when ({{ expression }}) then 1 else 0 end as expression
 {% endmacro %}
