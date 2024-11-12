@@ -6,3 +6,7 @@
 {% macro default__truth_expression(expression) %}
   {{ expression }} as expression
 {% endmacro %}
+
+{% macro sqlserver__truth_expression(expression) %}
+  iif({{ expression }}, 1, 0) as expression
+{% endmacro %}
